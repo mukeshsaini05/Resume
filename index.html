@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tailwind Css</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .mobile_header li{
+            margin-left: 0!important;
+        }
+        .open .mobile_menu_list{
+            display: block;
+            width: 94%;
+        }
+        .fixed-header .mobile_menu {
+            position: fixed;
+            width: 93.5%;
+            top: 10px;
+            background: rgb(229 231 235 / var(--tw-bg-opacity));
+        }
+        .fixed-header .main_contant {
+            margin-top: 90px;
+        }
+        .fixed-header ul.mobile_menu_list {
+            top: 88px;
+        }
+        .fixed-header ul.mobile_menu_list {
+            top: 76px;
+            width: 100%;
+            left: 0;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100" id="main_body">
     <div class="container m-auto py-9">
-        <div class="row flex flex-wrap">
-            <div class="left_src w-1/3 px-3 sticky top-0 h-full">
+        <div class="mobile_header block lg:hidden mb-5 px-3">
+            <div class="mobile_menu header rounded-md bg-white flex  justify-between py-3 items-center px-4">
+                <a href="#"><img class="logo w-44" src="image/logo_img.png"></a>
+                <nav class="font-bold flex lg:block">
+                    <button id="toggleButton" class="menu_btn">
+                        <img class="w-8" src="image/menu_icon.png"> 
+                    </button>
+                    <ul class=" mobile_menu_list hidden space-x-10 absolute top-28 left-3 w-11/12 p-4 rounded-md bg-gray-200">
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#home"> Home</a></li>
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#about">About</a></li>
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#service">Services</a></li>
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#skill">Skills</a></li>
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#project">Projects</a></li>
+                        <li class="my-2 ml-0 font-medium hover:text-red-600 cursor-pointer"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row main_contant block flex-wrap lg:flex">
+            <div class="left_src w-full lg:w-1/3 px-3 md:w-full  lg:sticky top-0 h-full">
                 <div class="left_profile bg-white rounded-md p-6">
                     <div class="left_profile_img mb-4 text-center">
                         <img class="w-28 m-auto border-dotted border border-rose-600 rounded-full p-1" src="image/mukesh.png">
@@ -34,7 +78,7 @@
                                 <div class="progress_bar block mt-1 bg-black w-full h-3 rounded-xl">
                                     <small class="block bg-gray-400 w-11/12 h-3 rounded-xl"></small>
                                 </div>
-                            </div>
+                            </div>  
                             <div class="top_skills_grid flex  flex-wrap my-3">
                                 <span class="w-1/2">CSS</span>
                                 <span class="w-1/2 text-right">90%</span>
@@ -58,9 +102,9 @@
                             </div>
                             <div class="top_skills_grid flex flex-wrap my-3">
                                 <span class="w-1/2">Tailwindcss</span>
-                                <span class="w-1/2 text-right">50%</span>
+                                <span class="w-1/2 text-right">75%</span>
                                 <div class="progress_bar block mt-1 bg-black w-full h-3 rounded-xl">
-                                    <small class="block bg-gray-400 w-1/2 h-3 rounded-xl"></small>
+                                    <small class="block bg-gray-400 w-3/4 h-3 rounded-xl"></small>
                                 </div>
                             </div>
                             <div class="top_skills_grid flex flex-wrap my-3">
@@ -96,21 +140,22 @@
                     <a class="rounded-md bg-gray-400 px-3 text-center block m-auto font-medium hover:bg-red-500 pt-2 pb-2 text-base text-white" href="#">Download My CV</a>
                 </div>
             </div>
-            <div class="right_src w-2/3 px-3">
-                <div class="header rounded-md bg-white flex justify-between py-2 items-center px-6">
-                    <a href="#"><img class="logo" src="image/logo_img.png"></a>
-                    <nav class="font-bold">
-                        <ul class="flex  space-x-12" >
+            <div class="right_src w-full lg:w-2/3 md:w-full px-3">
+                <div class="header rounded-md bg-white flex justify-between py-4 items-center px-6">
+                    <a href="#"><img class="logo w-44" src="image/logo_img.png"></a>
+                    <nav class="font-bold hidden lg:block">
+                        <ul class="flex  space-x-10" >
                             <li class="font-medium hover:text-red-600 cursor-pointer"><a href="#home"> Home</a></li>
                             <li class="font-medium hover:text-red-600 cursor-pointer"><a href="#about">About</a></li>
                             <li class=" font-medium hover:text-red-600 cursor-pointer"><a href="#service">Services</a></li>
                             <li class="font-medium hover:text-red-600 cursor-pointer"><a href="#skill">Skills</a></li>
+                            <li class="font-medium hover:text-red-600 cursor-pointer"><a href="#project">Projects</a></li>
                             <li class="font-medium hover:text-red-600 cursor-pointer"><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div id="home" class="self_info flex flex-wrap bg-white rounded-md px-6 py-10 my-6">
-                    <div class="self_info_contant w-4/6">
+                    <div class="self_info_contant w-full  lg:w-4/6">
                         <h3 class="text-red-500 mb-1">Welcome To My Website.</h3>
                         <h2 class="text-3xl font-medium mb-3">Hi, I'm Mukesh!
                             <div class="typing_text flex">
@@ -124,19 +169,19 @@
                             <a href="#" class="w-max ml-2 py-2 hover:bg-red-500 px-5 bg-gray-400 text-white rounded-md block">Let's Talk</a>
                         </div>
                     </div>
-                    <div class="self_info_image w-2/6">
+                    <div class="self_info_image w-full hidden lg:block lg:w-2/6">
                         <div class="image_self">
                             <img class=" m-auto border-dotted border border-rose-600 rounded-full p-1" src="image/mukesh.png">
                         </div>
                     </div>
                 </div>
-                <div id="about" class="home_about my-12 flex flex-wrap items-center">
-                    <div class="about_left w-2/5 px-3">
+                <div id="about" class="home_about my-9 lg:my-12 block lg:flex flex-wrap items-center">
+                    <div class="about_left w-full lg:w-2/5 p-0 lg:px-3">
                         <div class="about_left_exp bg-white rounded-full flex justify-center items-center h-72 w-72 text-center m-auto">
                             <h3 class="text-2xl"><b class="text-7xl leading-3">03</b><br> Years of Experience</h3>
                         </div>
                     </div>
-                    <div class="about_right w-3/5 px-3">
+                    <div class="about_right w-full mt-6 lg:mt-0 lg:w-3/5 p-0 lg:px-3">
                         <h2 class="text-3xl text-red-500 font-medium mb-3">About Us</h2>
                         <p class="mb-5">Hi, I am Web Designer with 3 years of experience, I have a strong foundation in HTML, CSS, and have worked on a range of projects for clients 
                             across various industries. My experience includes design responsive and websites, creating beautiful user interfaces, and optimizing 
@@ -145,44 +190,44 @@
                             to work on new and challenging projects that will allow me to further develop my skills and expertise.</p>
                     </div>
                 </div>
-                <div id="skill" class="skill_all my-12">
+                <div id="skill" class="skill_all my-9 lg:my-12">
                     <h2 class="text-center text-3xl text-red-500 font-medium mb-3" >Skills</h2>
                     <ul class="flex flex-wrap justify-center skill_all_list">
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.w3schools.com/html" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.w3schools.com/html" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/html.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">HTML</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">HTML</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.w3schools.com/css" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.w3schools.com/css" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/css.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">CSS</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">CSS</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://getbootstrap.com" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://getbootstrap.com" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/bootstrap.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">Bootstarp</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">Bootstarp</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://sass-lang.com" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://sass-lang.com" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/scss.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">SCSS</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">SCSS</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.tailwindcss.com" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.tailwindcss.com" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/tailwind.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">Tailwindcss</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">Tailwindcss</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.adobe.com/in/products/photoshop.html" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.adobe.com/in/products/photoshop.html" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/Adobe_Photoshop.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">Photoshop</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">Photoshop</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.figma.com" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.figma.com" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/figma.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">Figma</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">Figma</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.shopify.com/" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.shopify.com/" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/shopify.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">Shopify</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">Shopify</h3>
                         </a></li>
-                        <li class="w-1/5 text-center py-4 px-3"><a href="https://www.w3schools.com/js/default.asp" target="_blank">
+                        <li class="w-1/3 lg:w-1/5 text-center py-3 lg:py-4 px-2 lg:px-3"><a href="https://www.w3schools.com/js/default.asp" target="_blank">
                             <div class="skill_img bg-white rounded-md p-5"><img class="m-auto w-16 h-16 object-contain" src="image/javascript.png"></div>
-                            <h3 class="text-xl text-gray-400 font-medium mt-2">JavaScript</h3>
+                            <h3 class="text-base lg:text-xl text-gray-400 font-medium mt-2">JavaScript</h3>
                         </a></li>
                         
                     </ul>
@@ -190,7 +235,7 @@
                 <div id="service" class="service_sec">
                     <h2 class="text-center text-3xl text-red-500 font-medium mb-3" >Service</h2>
                     <ul class="service_box_row flex flex-wrap">
-                        <li class="w-1/3 p-3">
+                        <li class="w-full lg:w-1/3 p-0 pb-3 lg:p-3">
                             <div class="service_grid bg-white p-4 pb-7 rounded-md h-full">
                                 <div class="service_img bg-gray-400 w-16 h-16 rounded-md flex justify-center items-center mb-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" height="32px" width="32px" version="1.1" id="Capa_1" viewBox="0 0 186.846 186.846" xml:space="preserve">
@@ -202,7 +247,7 @@
                                         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>                                
                             </div>
                         </li>
-                        <li class="w-1/3 p-3">
+                        <li class="w-full lg:w-1/3 p-0 pb-3 lg:p-3">
                             <div class="service_grid bg-white p-4 pb-7 rounded-md h-full" >
                                 <div class="service_img bg-gray-400 w-16 h-16 rounded-md flex justify-center items-center mb-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="32px" height="32px" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM4 12c0-.899.156-1.762.431-2.569L6 11l2 2v2l2 2 1 1v1.931C7.061 19.436 4 16.072 4 12zm14.33 4.873C17.677 16.347 16.687 16 16 16v-1a2 2 0 0 0-2-2h-4v-3a2 2 0 0 0 2-2V7h1a2 2 0 0 0 2-2v-.411C17.928 5.778 20 8.65 20 12a7.947 7.947 0 0 1-1.67 4.873z"/></svg>
@@ -212,7 +257,7 @@
                                         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>                                
                             </div>
                         </li>
-                        <li class="w-1/3 p-3">
+                        <li class="w-full lg:w-1/3 p-0 pb-3 lg:p-3">
                             <div class="service_grid bg-white p-4 pb-7 rounded-md h-full">
                                 <div class="service_img bg-gray-400 w-16 h-16 rounded-md flex justify-center items-center mb-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" fill="none">
@@ -226,18 +271,83 @@
                         </li>
                     </ul>
                 </div>  
-                <div id="contact" class="contact_form mt-12">
+                <div id="project" class="project_sec mt-9 lg:mt-12">
+                    <h2 class="text-center text-3xl text-red-500 font-medium mb-5" >My Work & Projects</h2>
+                    <div class="project_row flex flex-wrap">
+                        <div class="project_grid w-full lg:w-1/3 p-0 pb-3 lg:p-3">
+                            <div class="project_grid_sec p-4 pb-7 bg-white rounded-md">
+                                <img class="h-full lg:h-44 w-full" src="image/pti_site.png">
+                                <a href="#"><h3 class="text-xl text-black mt-3 mb-2 font-medium" >Exclusively Italy</h3></a>
+                                <p class="text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged </p>
+                            </div>
+                        </div>
+                        <div class="project_grid w-full lg:w-1/3 p-0 pb-3 lg:p-3">
+                            <div class="project_grid_sec p-4 pb-7 bg-white rounded-md">
+                                <img class="h-full lg:h-44 w-full" src="image/global_food.png">
+                                <a href="#"><h3 class="text-xl text-black mt-3 mb-2 font-medium" >Exclusively Italy</h3></a>
+                                <p class="text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged </p>
+                            </div>
+                        </div>
+                        <div class="project_grid w-full lg:w-1/3 p-0 pb-3 lg:p-3">
+                            <div class="project_grid_sec p-4 pb-7 bg-white rounded-md">
+                                <img class="h-full lg:h-44 w-full" src="image/logaras.png">
+                                <a href="#"><h3 class="text-xl text-black mt-3 mb-2 font-medium" >Exclusively Italy</h3></a>
+                                <p class="text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged </p>
+                            </div>
+                        </div>
+                        <div class="project_grid w-full lg:w-1/3 p-0 pb-3 lg:p-3">
+                            <div class="project_grid_sec p-4 pb-7 bg-white rounded-md">
+                                <img class="h-full lg:h-44 w-full" src="image/oyg.png">
+                                <a href="#"><h3 class="text-xl text-black mt-3 mb-2 font-medium" >Exclusively Italy</h3></a>
+                                <p class="text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged </p>
+                            </div>
+                        </div>
+                        <div class="project_grid w-full lg:w-1/3 p-0 pb-3 lg:p-3">
+                            <div class="project_grid_sec p-4 pb-7 bg-white rounded-md">
+                                <img class="h-full lg:h-44 w-full" src="image/ganeshcreations.png">
+                                <a href="#"><h3 class="text-xl text-black mt-3 mb-2 font-medium" >Exclusively Italy</h3></a>
+                                <p class="text-gray-400">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience mt-9 lg:mt-12">
+                    <h2 class="text-center text-3xl text-red-500 font-medium mb-5" >Experience</h2>
+                    <div class="experience_row block lg:flex flex-wrap">
+                        <div class="experience_grid w-full lg:w-1/2 p-0 pb-3 lg:p-3">
+                            <div class="experience_grid_list bg-white p-4 rounded-md">
+                                <div class="experience_grid_joyning flex justify-between items-center mb-4">
+                                    <div class="company_log flex items-center">
+                                        <span class="w-16 h-16 bg-gray-400 p-1 rounded-md mr-2">
+                                            <img class="w-full h-full" src="image/pti_logo.png">
+                                        </span>
+                                        <h2 class="text-gray-400 font-medium">Prerna Trimurti Infotech</h2>
+                                    </div>
+                                    <h3>Jan 2021 - <b class="text-red-500">Present</b></h3>
+                                </div>
+                                <div class="company_location flex justify-between mb-4">
+                                    <spam class="font-medium">Jaipur, Rajasthan</spam>
+                                    <b>3 Years</b>
+                                    <button class="rounded-md bg-gray-400 px-3 text-center pt-1 pb-1 text-sm text-white">Remote</button>
+                                </div>
+                                <h2 class="text-xl font-medium mb-3">Web Designer</h2>
+                                <p class="text-gray-400">Worked on designing landing pages of website using different technologies like HTML, CSS, SCSS, BOOTSTRAP, TAILWIND CSS, PHOTOSHOP, FIGMA, SHOPIFY, JQUERY etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="contact_form mt-9 lg:mt-12">
                     <h2 class="text-center text-3xl text-red-500 font-medium mb-6" >Get In Touch</h2>
-                    <div class="contact_form_row flex flex-wrap">
-                        <div class="contact_form_left w-2/3 px-3">
+                    <div class="contact_form_row block lg:flex flex-wrap">
+                        <div class="contact_form_left w-full lg:w-2/3 px-0 lg:px-3">
                             <form class="bg-white px-6 py-7 rounded-md">
                                 <h3 class="font-medium text-2xl mb-4 ">Let's Connect</h3>
-                                <div class="form_info_row mb-4 flex flex-wrap justify-between">
-                                    <div class="form_info w-1/2 pr-2">
+                                <div class="form_info_row mb-4 block lg:flex flex-wrap justify-between">
+                                    <div class="form_info w-full lg:w-1/2 p-0 lg:pr-2 mb-4 lg:mb-0">
                                         <label for="Name" class="form-label mb-1 block">Name</label>
                                         <input type="text" class="form-control rounded-md focus:outline-none bg-gray-100 pt-2 pb-3 px-3 border w-full" id="Name">
                                     </div>
-                                    <div class="form_info w-1/2 pl-2">
+                                    <div class="form_info w-full lg:w-1/2 p-0 lg:pl-2">
                                         <label for="email" class="form-label mb-1 block">Email</label>
                                         <input type="email" class="form-control rounded-md focus:outline-none bg-gray-100 pt-2 pb-3 px-3 border w-full" id="email">
                                     </div>
@@ -253,7 +363,7 @@
                                 <input class="submit_btn bg-gray-400 px-4 text-white py-2 rounded-md" type="submit" value="Submit">
                             </form>
                         </div>
-                        <div class="contact_text w-1/3 px-3">
+                        <div class="contact_text w-full mt-6 lg:mt-0 lg:w-1/3 px-0 lg:px-3">
                             <div class="contact_right_grid rounded-md p-4 bg-white mb-6">
                                 <div class="icon_info w-9 h-9 rounded-full m-auto flex justify-center items-center bg-gray-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -313,7 +423,7 @@
                         </div>
                     </div>
                 </div> 
-                <div class="copyright px-3 mt-5">
+                <div class="copyright px-0 lg:px-3 mt-5">
                     <p class="rounded-md bg-white p-4 text-center text-gray-400">Copyright © 2024 All right reserved - Design by <a class="text-red-500" href="#"> Mukesh Saini.</a></p>
                 </div>             
             </div>
@@ -330,11 +440,24 @@
           backSpeed: 40,
           loop: true,
         });
+
+        // mobile menu
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            document.body.classList.toggle('open');
+        });
+
+        // header fixe
+
+        var header = document.getElementById('main_body');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 30) {
+                header.classList.add('fixed-header');
+            } else {
+                header.classList.remove('fixed-header');
+            }
+        });
+
       </script>
-
-
-
-
 </body>
 </html>
 
